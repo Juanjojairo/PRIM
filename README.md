@@ -369,23 +369,6 @@ Downloaded data, checkpoints, `results/`, `history/`, local W&B state, caches, a
 | [Contributing guide](CONTRIBUTING.md) | Proposing a focused code or documentation change |
 | [Security policy](SECURITY.md) | Reporting a vulnerability or handling credentials |
 
-## 🔎 Reproducibility checklist
-
-Before comparing or publishing a run:
-
-1. Record the source commit, Python version, resolved dependencies, operating system, and hardware.
-2. Confirm the seed, forward operator, task condition, checkpoint paths, and W&B mode.
-3. Run the SPI operator verification command.
-4. Use validation data for hyperparameter and iteration selection.
-5. Evaluate all 10,000 test examples unless the result is explicitly labeled as a subset.
-6. Archive aggregate metrics, recurrent-step curves, checkpoint metadata, and runtime settings.
-7. Record checksums for every externally distributed checkpoint.
-
-The release manifest can verify all tracked release files except the manifest itself:
-
-```bash
-python tools/release_manifest.py --check
-```
 
 ## 🤝 Contributing
 
