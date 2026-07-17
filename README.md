@@ -59,14 +59,14 @@ Across the four manuscript conditions, PRIM achieved the highest reported PSNR i
 For measurements $y$ produced by a known forward operator $\mathbf{H}$, PRIM initializes the reconstruction as
 
 $$
-z_0 = E^{*}(\mathbf{H}^{\top}y), \qquad
-x_0 = G^{*}(z_0).
+z_0 = E^*(H^\top y), \quad
+x_0 = G^*(z_0)
 $$
 
 where $E^{*}$ is a pretrained task-specific encoder and $G^{*}$ is a pretrained generator. Both remain frozen while the RIM is trained. At recurrent step $t$, the network receives the current estimate together with the backprojected measurement residual
 
 $$
-c_t = \mathbf{H}^{\top}\left(y - \mathbf{H}x_t\right),
+c_t = H^\top (y - Hx_t)
 $$
 
 and predicts the next image update. The training loss supervises the reconstruction trajectory, allowing intermediate steps to contribute to learning.
