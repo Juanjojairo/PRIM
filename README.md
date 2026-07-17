@@ -387,26 +387,6 @@ The release manifest can verify all tracked release files except the manifest it
 python tools/release_manifest.py --check
 ```
 
-## ⚠️ Scope and limitations
-
-- The current study is limited to 32 x 32 grayscale MNIST; performance does not imply generalization to natural or high-resolution images.
-- The main reported conditions use noiseless measurements, although noise controls are available in several entry points.
-- Pretrained checkpoints are not stored in Git, so exact numerical reproduction requires retraining or obtaining matching external artifacts.
-- Dependency versions are not pinned in `requirements.txt`; archive the resolved environment for long-term reproduction.
-- Condition-specific filenames preserve experiment context and may encode defaults. Explicit CLI arguments and each module's `--help` output are the executable source of truth.
-- This is research software, not a production reconstruction service.
-
-## 🧯 Troubleshooting
-
-| Problem | Recommended action |
-|:--|:--|
-| An evaluator reports missing checkpoints | Run its `--check-only` mode, then train or place each checkpoint at the printed path. |
-| CUDA is unavailable | Use `--device cpu` for validation or `--device auto` to let the script select the device. |
-| W&B requests authentication | Run `wandb login`, provide `WANDB_API_KEY`, or switch to `--wandb-mode offline`. |
-| A full run is too expensive for a first test | Add `--max-train-batches` and `--max-val-batches`; do not report the resulting metrics as full experiments. |
-| ADMM evaluation has no parameters | Run the documented W&B sweep and iteration-selection workflow, or supply the archived parameter file format. |
-| Results differ across environments | Compare the commit, dependency versions, seed, checkpoint metadata, device, and test-set size. |
-
 ## 🤝 Contributing
 
 Focused issues and pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing changes, keep experimental evidence traceable, and do not commit downloaded data, checkpoints, credentials, local W&B state, or generated archives.
