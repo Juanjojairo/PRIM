@@ -1,0 +1,41 @@
+seed: 42
+device: cpu
+
+data:
+  dataset: mnist
+  image_size: 32
+  pixel_range: [0.0, 1.0]
+  batch_size: 64
+  num_workers: 2
+
+task:
+  name: spi
+  kappa: 0.1
+  measurement_model: gaussian_linear_sensing
+  measurement_noise_std: 0.0
+
+model:
+  generator_activation: elu
+  latent_dim: 128
+  rim_hidden_channels: 32
+  rim_steps: 10
+
+admm:
+  gamma: 0.02
+  beta: 50.0
+  sigma: 100.0
+
+train:
+  epochs: 10
+  lr: 1e-4
+  weight_decay: 0.0
+  grad_clip: 1.0
+
+loss:
+  type: multistep_mse
+  step_weights: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 1.0]
+
+paths:
+  generator_ckpt: checkpoints/generator.pt
+  encoder_ckpt: checkpoints/encoder_spi.pt
+  output_dir: outputs/rim_spi_k01

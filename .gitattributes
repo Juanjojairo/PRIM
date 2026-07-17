@@ -1,0 +1,30 @@
+* text=auto
+
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.cff text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.csv text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.pt binary
+*.pth binary
+*.ckpt binary
+*.gz binary
+
+data/** linguist-vendored
+docs/**/*.aux linguist-generated
+docs/**/*.bbl linguist-generated
+docs/**/*.blg linguist-generated
+docs/**/*.fdb_latexmk linguist-generated
+docs/**/*.fls linguist-generated
+docs/**/*.log linguist-generated
+docs/**/*.out linguist-generated

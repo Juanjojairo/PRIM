@@ -1,0 +1,75 @@
+name: Bug report
+description: Report a reproducible problem in training, evaluation, or an operator.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for filing a focused report. Remove credentials and private experiment links before submitting.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Dataset or preprocessing
+        - SPI operator
+        - Super-resolution operator
+        - Generator training
+        - Encoder training
+        - RIM or PRIM training
+        - EADMM or PEADMM
+        - Evaluation or metrics
+        - W&B integration
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction command
+      description: Include the smallest complete command and any non-default flags. Do not include secrets.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Error output
+      description: Paste the relevant traceback or incorrect output.
+      render: text
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Commit SHA, OS, Python, PyTorch, torchvision, CUDA, and GPU.
+      placeholder: |
+        Commit:
+        OS:
+        Python:
+        PyTorch / torchvision:
+        CUDA / GPU:
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Task, condition, split, sample count, checkpoint metadata, or sanitized artifact links.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I searched for an existing issue describing this problem.
+          required: true
+        - label: I removed API keys, credentials, and private links.
+          required: true

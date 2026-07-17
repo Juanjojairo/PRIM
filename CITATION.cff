@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "Recurrent Inference Machines with Generative Initialization for Image Inverse Problems"
+authors:
+  - family-names: "Vasquez"
+    given-names: "Ernesto Jose"
+    affiliation: "Universidad Industrial de Santander"
+  - family-names: "Ribero"
+    given-names: "Juan Jose"
+    affiliation: "Universidad Industrial de Santander"
+  - family-names: "Martinez"
+    given-names: "Emmanuel"
+    affiliation: "Universidad Industrial de Santander"
+  - family-names: "Arguello"
+    given-names: "Henry"
+    affiliation: "Universidad Industrial de Santander"
+abstract: >-
+  Research software for image inverse problems that combines a learned
+  encoder-generator initialization with an image-space Recurrent Inference
+  Machine. The implementation evaluates single-pixel imaging and
+  super-resolution on MNIST against GANI, EADMM, PEADMM, and a standard RIM.
+keywords:
+  - inverse problems
+  - recurrent inference machines
+  - generative priors
+  - single-pixel imaging
+  - super-resolution
+  - PyTorch

@@ -1,0 +1,63 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments and secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Editors, operating systems, and local agents
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.codex
+.agents/
+
+# Datasets and downloaded assets
+data/
+mnist/
+
+# Model checkpoints and exported models
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Experiment tracking and generated outputs
+results/
+outputs/
+history/
+wandb/
+wandb_logs/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Local archives
+*.zip
+*.7z
+*.tar
+*.tar.gz

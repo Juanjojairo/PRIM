@@ -1,0 +1,52 @@
+program: eval_eadmm.py
+project: peadmm-rim-sweeep
+name: sweep-eadmm-sr-x4-val
+method: bayes
+metric:
+  name: eadmm/psnr
+  goal: maximize
+parameters:
+  root:
+    value: data
+  task:
+    value: SR
+  scale:
+    value: 4
+  split:
+    value: val
+  device:
+    value: cuda
+  generator-checkpoint:
+    value: results/generator_wgangp_mnist32_e500_bs128_glr_1e-4_dlr_1e-4_z128_ch64_gp10_crit5_elu/generator.pt
+  save-root:
+    value: results/sweeps
+  batch-size:
+    values: [128]
+  num-workers:
+    value: 0
+  measurement-noise-std:
+    values: [0.0]
+  iterations:
+    values: [10000]
+  random-init-std:
+    values: [1.0]
+  max-examples:
+    values: [100]
+  gamma:
+    values: [1.0, 10.0, 25.0, 50.0, 100.0, 200.0]
+  beta:
+    values: [0.005, 0.01, 0.02, 0.05, 0.1, 1.0]
+  sigma:
+    values: [0.005, 0.01, 0.02, 0.05, 0.1, 1.0]
+  wandb-group:
+    value: sweep-eadmm-sr-x4-val
+  wandb-job-type:
+    value: sweep_eval_eadmm
+  wandb-tags:
+    value: sweep,bayes,eadmm,sr,x4,val
+command:
+  - ${env}
+  - python
+  - -m
+  - eval_eadmm
+  - ${args}
